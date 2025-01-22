@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tic-Tac-Toe</title>
+</head>
+<body>
+    <h1 class="game-logo">TIC-TAC-TOE</h1>
+   <main>
+
+    <div id="board" class="droptarget">
+        <div class="tile" data-cell data-cell-index="0" ></div>
+        <div class="tile" data-cell data-cell-index="1" ></div>
+        <div class="tile" data-cell data-cell-index="2" ></div>
+        <div class="tile" data-cell data-cell-index="3" ></div>
+        <div class="tile" data-cell data-cell-index="4" ></div>
+        <div class="tile" data-cell data-cell-index="5" ></div>
+        <div class="tile" data-cell data-cell-index="6" ></div>
+        <div class="tile" data-cell data-cell-index="7" ></div>
+        <div class="tile" data-cell data-cell-index="8" ></div>
+    </div>
+    <p id="winner"></p>
+    
+    <button class="game-restart">Restart Game</button>
+
+
+    <section class="player1-zone">
+        <h2>Player 1</h2>
+            <div class="cell-p" data-cell id="one">
+                <img src="./images/player1-140x140.png" class="draggable" id="draggable-large" draggable="true">
+            </div>
+            <div class="cell-p" data-cell id="one-one">
+                <img src="./images/player1-140x140.png" class="draggable" id="draggable-large3" draggable="true">
+            </div>
+
+            <div class="cell-p" data-cell id="two">
+                <img src="./images/player1-100x100.png"  class="draggable" id="draggable-medium" draggable="true">
+            </div>
+            <div class="cell-p" data-cell id="two-two">
+                <img src="./images/player1-100x100.png" class="draggable" id="draggable-medium3" draggable="true">
+            </div>
+            <div class="cell-p" data-cell id="seven">
+                <img src="./images/player1-100x100.png" class="draggable" id="draggable-medium4" draggable="true">
+            </div>
+
+            <div class="cell-p" data-cell id="three">
+                <img src="./images/player1-80x80.png" class="draggable" id="draggable-small" draggable="true">
+            </div>
+            <div class="cell-p" data-cell id="three-three">
+                <img src="./images/player1-80x80.png" class="draggable" id="draggable-small3" draggable="true">
+            </div>
+            <div class="cell-p" data-cell id="eight">
+                <img src="./images/player1-80x80.png" class="draggable" id="draggable-small4" draggable="true">
+            </div>
+    </section>
+
+    <section class="player2-zone">
+        <h2>Player 2</h2>
+            <div class="cell-p" data-cell id="four">
+                <img src="./images/player2-140x140.png" class="draggable" id="draggable-large2" draggable="true">
+            </div>
+            <div class="cell-p" data-cell id="four-four">
+                <img src="./images/player2-140x140.png" class="draggable" id="draggable-large5" draggable="true">
+            </div>
+
+            <div class="cell-p" data-cell id="five">
+                <img src="./images/player2-100x100.png" class="draggable" id="draggable-medium2" draggable="true">
+            </div>
+            <div class="cell-p" data-cell id="five-five">
+                <img src="./images/player2-100x100.png" class="draggable" id="draggable-medium5" draggable="true">
+            </div>
+            <div class="cell-p" data-cell id="seven-seven">
+                <img src="./images/player2-100x100.png" class="draggable" id="draggable-medium6" draggable="true">
+            </div>
+
+            <div class="cell-p" data-cell id="six">
+                <img src="./images/player2-80x80.png" class="draggable" id="draggable-small2" draggable="true">
+            </div>
+            <div class="cell-p" data-cell id="six-six">
+                <img src="./images/player2-80x80.png" class="draggable" id="draggable-small5" draggable="true">
+            </div>
+            
+            <div class="cell-p" data-cell id="eight-eight">
+                <img src="./images/player2-80x80.png" class="draggable" id="draggable-small6" draggable="true">
+            </div>
+    </section>
+
+    <audio id="bgAudio">
+        <source src="/background-music/vikings_music.mp3" type="audio/mpeg">
+        <source src="/background-music/song2.mp3" type="audio/mp3">
+    </audio>
+
+    <button id="playButton">Play Audio</button>
+   </main>
+   
+    <script src="./script.js"></script>
+</body>
+</html>

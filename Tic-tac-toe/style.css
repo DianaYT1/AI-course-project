@@ -1,0 +1,330 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-image: url(./images/board0.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    overflow: hidden;
+    height: 100vh;
+    user-select: none;
+}
+
+main{
+    /*background-color: aliceblue;*/
+    position: relative;
+}
+
+.game-logo{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family:  Papyrus, fantasy;
+    font-size: 20px;
+    padding: 20px;
+    color: white;
+}
+
+h2{
+    position: relative;
+    margin-top: -100px;
+    left: 150px;
+    font-size: 30px;
+    margin-top: -150px;
+}
+/*
+.img-board{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 50px;
+}*/
+
+.board{
+    width: 100vw;
+    height: 100vh;
+    margin-top:-30px;
+    display: grid;
+   /* justify-items: center;*/
+    align-content: center;
+    justify-content: center;
+    /*align-items: center;*/
+    grid-template-columns: repeat(3,auto);
+}
+
+/*#winner {
+    color: white;
+    text-align: center;
+}*/
+
+.tile{
+    width: 110px;
+    height: 110px;
+    margin: 1.5px;
+    background: rgba(3, 3, 3, 0.795);
+    border: 1px solid rgba(78, 78, 84, 0.795);
+    
+}
+
+#board{
+    width: 450px;
+    height: 450px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    background: rgba(3, 3, 3, 0.795)
+    
+}
+
+.tile {
+    width: 147px;
+    height: 147px;
+    font-size: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.horizontal-line{
+    border-bottom: 3px solid grey;
+}
+
+.vertical-line{
+    border-right: 3px solid grey;
+}
+
+.tile:first-child,
+.tile:nth-child(2),
+.tile:nth-child(3){
+    border-top: none;
+}
+
+.tile:last-child,
+.tile:nth-child(8),
+.tile:nth-child(7){
+    border-bottom: none;
+}
+
+.tile:nth-child(3n+1){
+    border-left: none;
+}
+
+.tile:nth-child(3n+3){
+    border-right: none;
+
+}
+
+button{
+    position:relative;
+    top: 20px;
+    padding: 5px;
+    width: 160px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: rgb(161, 76, 10);
+    cursor: pointer;
+    margin-top: -5px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+}
+
+
+button:hover{
+    transition: 0.25s;
+    background-color: rgb(114, 58, 15);
+}
+.cell-p{
+   position: relative;
+    width: 120px;
+    height: 140px;
+ /*   margin-left: 4rem;*/
+    border: 5px solid rgb(37, 20, 2);
+}
+
+.cell-p:first-child{
+    margin-top: 20px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+#two, #five{
+    height: 105px;
+}
+#six{
+    
+    margin-right: 20px;
+}
+
+
+#four, #five, #six, #seven, #eight, #four-four, #five-five, #six-six, #seven-seven, #eight-eight{
+   height: 85px;
+   border: none;
+   right: 10px;
+   margin-right: 5px;
+}
+
+#one, #two, #three, #one-one, #two-two, #three-three{
+    right: 10px;
+    border: none;
+    
+}
+
+#two, #five{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.cell-p:nth-child(2),
+.cell-p:nth-child(3){
+    border:  none;
+}
+
+.left-img{
+    position: absolute;
+    top:-30px;   
+    left:-60px;
+}
+
+.right-img{
+    position:absolute;
+    top: -40px;
+    right: -60px;
+}
+
+.player1-zone{
+    color: white;
+    font-family:  Papyrus, fantasy;
+    text-align: center;
+    position: absolute;
+    display: flex; /* Променен display на flex */
+    align-items: flex-start; /* За позициониране в горния край на контейнера */
+    justify-content: flex-start; 
+    top: 420px;
+    left: 50px;
+    width: 200px;
+    height: 70px;
+}
+
+
+.player1-zone .cell-p:nth-child(n+4) {
+    margin-top: 10px; /* Разстояние между вторите три елемента и първите три */
+}
+
+.player2-zone .cell-p:nth-child(n+4) {
+    margin-top: 10px; /* Разстояние между вторите три елемента и първите три */
+}
+
+
+
+.player2-zone{
+    color: white;
+    font-family:  Papyrus, fantasy;
+    text-align: center;
+    position: absolute;
+    display: flex; /* Променен display на flex */
+    align-items: flex-start; /* За позициониране в горния край на контейнера */
+    justify-content: flex-start; 
+    top: 420px;
+    right: 300px;
+    width: 200px;
+    height: 70px;
+}
+
+#draggable-large{
+
+    cursor: move;
+}
+  
+
+#draggable-medium{
+
+    cursor: move;
+}
+
+#draggable-small{
+    
+    cursor: move;
+}
+
+#draggable-medium2{
+    cursor: move;
+}
+
+#draggable-medium3{
+    cursor: move;
+}
+
+#draggable-medium4{
+    cursor: move;
+}
+
+#draggable-medium5{
+    cursor: move;
+}
+
+#draggable-medium6  {
+    cursor: move;
+}
+
+#draggable-small2{
+    cursor: move;
+}
+
+#draggable-small3{
+    cursor: move;
+}
+
+#draggable-small4{
+    cursor: move;
+   
+}
+
+#draggable-small5{
+    cursor: move;
+}
+
+#draggable-small6{
+    cursor: move;
+}
+
+#draggable-large2{
+    cursor: move;
+}
+
+#draggable-large2-2{
+    cursor: move;
+}
+
+#draggable-large3{
+    cursor: move;
+}
+
+#draggable-large5{
+    cursor: move;
+}
+
+.draggable{
+    background: none;
+}
+
+
+
+#audio-controls {
+    display: none;
+}
